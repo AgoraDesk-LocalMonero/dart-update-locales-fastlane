@@ -31,16 +31,12 @@ void update(ArgResults argResults) async {
     final List<String> fastlaneDirsPaths = fastlaneDirs.map((e) => e.path).toList();
 
     for (final dirName in _dirNameFileName.keys) {
-      print('++++++++++++++++++++++++++++1 ${_dirNameFileName[dirName]}');
       final pathToTranslationFile =
           translationsFiles.firstWhere((e) => e.path.split('/').last == _dirNameFileName[dirName]).path;
 
-      print('++++++++++++++++++++++++++++2');
       final Map<String, dynamic> translationsMap = await _readFileAsMap(pathToTranslationFile);
 
-
       final dirPath = '${Directory(args[1]).path}/$dirName';
-      print('++++++++++++++++++++++++++++3 - $kFlavor');
       final Map<String, String> fileNameTranslatedString;
 
       if (flavor == 'agoradesk') {
