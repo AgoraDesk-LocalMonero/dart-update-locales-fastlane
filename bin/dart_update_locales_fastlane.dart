@@ -8,7 +8,8 @@ Future<void> main(List<String> arguments) async {
   final parser = ArgParser()
     ..addFlag(kTranslationsDir)
     ..addFlag(kFastlaneDir)
-    ..addFlag(kFlavor);
+    ..addFlag(kFlavor)
+    ..addFlag(kOS);
 
   ArgResults argResults = parser.parse(arguments);
   update(argResults);

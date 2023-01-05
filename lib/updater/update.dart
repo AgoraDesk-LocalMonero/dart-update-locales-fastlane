@@ -16,10 +16,12 @@ import 'package:args/args.dart';
 const kTranslationsDir = 'stringsDir';
 const kFastlaneDir = 'updatedDir';
 const kFlavor = 'flavor';
+const kOS = 'os';
 
 void update(ArgResults argResults) async {
   List<String> args = argResults.rest;
   final flavor = args[2];
+  final os = args[3];
 
   stderr.writeln('working directory - ${argResults.arguments}');
   if (args.isEmpty) {
@@ -40,13 +42,26 @@ void update(ArgResults argResults) async {
       final Map<String, String> fileNameTranslatedString;
 
       if (flavor == 'agoradesk') {
-        fileNameTranslatedString = _fileNameTranslatedStringAD;
+        if (os == 'ios') {
+          fileNameTranslatedString = _fileNameTranslatedStringAdIos;
+        } else {
+          fileNameTranslatedString = _fileNameTranslatedStringAdAndroid;
+        }
       } else {
-        fileNameTranslatedString = _fileNameTranslatedStringLM;
+        if (os == 'ios') {
+          fileNameTranslatedString = _fileNameTranslatedStringLmIos;
+        } else {
+          fileNameTranslatedString = _fileNameTranslatedStringLmAndroid;
+        }
       }
       for (final filename in fileNameTranslatedString.keys) {
-        String translatedStr = translationsMap[fileNameTranslatedString[filename]];
-        await _writeToFile(content: translatedStr, path: '$dirPath/$filename');
+        try {
+          String translatedStr = translationsMap[fileNameTranslatedString[filename]];
+          await _writeToFile(content: translatedStr, path: '$dirPath/$filename');
+        } catch (e) {
+          print(
+              '[+++error - translation string missing] - ${fileNameTranslatedString[filename]} in the file $pathToTranslationFile');
+        }
       }
     }
   }
@@ -77,7 +92,6 @@ Future _writeToFile({
   required String content,
   required String path,
 }) async {
-  print('>>>>>>> $path');
   final f = await File(path).create(recursive: true);
   await f.writeAsString(content);
 }
@@ -128,11 +142,19 @@ final Map<String, String> _dirNameFileName = {
   'zh-Hant': 'app_zh-tw.arb',
 };
 
-final Map<String, String> _fileNameTranslatedStringAD = {
+final Map<String, String> _fileNameTranslatedStringAdIos = {
   'description.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbdescription250Sbagoradesk",
   'name.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbtitle250Sbagoradesk",
 };
-final Map<String, String> _fileNameTranslatedStringLM = {
+final Map<String, String> _fileNameTranslatedStringLmIos = {
   'description.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbdescription250Sblocalmonero",
   'name.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbtitle250Sblocalmonero",
+};
+final Map<String, String> _fileNameTranslatedStringLmAndroid = {
+  'full_description.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbdescription250Sblocalmonero",
+  'title.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbtitle250Sblocalmonero",
+};
+final Map<String, String> _fileNameTranslatedStringAdAndroid = {
+  'full_description.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbdescription250Sbagoradesk",
+  'title.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbtitle250Sbagoradesk",
 };
