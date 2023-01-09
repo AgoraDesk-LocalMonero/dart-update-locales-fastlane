@@ -146,11 +146,13 @@ final Map<String, String> _fileNameTranslatedStringAdIos = {
   'description.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbdescription250Sbagoradesk",
   'name.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbtitle250Sbagoradesk",
   'subtitle.txt': "app_apple_app_store_subtitle_agoradesk",
+  'keywords.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbkeywords250Sbagoradesk",
 };
 final Map<String, String> _fileNameTranslatedStringLmIos = {
   'description.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbdescription250Sblocalmonero",
   'name.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbtitle250Sblocalmonero",
   'subtitle.txt': "app_apple_app_store_subtitle_localmonero",
+  'keywords.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbkeywords250Sblocalmonero",
 };
 final Map<String, String> _fileNameTranslatedStringAdAndroid = {
   'full_description.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbdescription250Sbagoradesk",
