@@ -145,16 +145,21 @@ final Map<String, String> _dirNameFileName = {
 final Map<String, String> _fileNameTranslatedStringAdIos = {
   'description.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbdescription250Sbagoradesk",
   'name.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbtitle250Sbagoradesk",
+  'subtitle.txt': "app_apple_app_store_subtitle_agoradesk",
 };
 final Map<String, String> _fileNameTranslatedStringLmIos = {
   'description.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbdescription250Sblocalmonero",
   'name.txt': "app250Sbapple8722Sbapp8722Sbstore8722Sbtitle250Sblocalmonero",
-};
-final Map<String, String> _fileNameTranslatedStringLmAndroid = {
-  'full_description.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbdescription250Sblocalmonero",
-  'title.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbtitle250Sblocalmonero",
+  'subtitle.txt': "app_apple_app_store_subtitle_localmonero",
 };
 final Map<String, String> _fileNameTranslatedStringAdAndroid = {
   'full_description.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbdescription250Sbagoradesk",
   'title.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbtitle250Sbagoradesk",
+  'short_description.txt': "app_google_play_store_short_description_agoradesk",
 };
+final Map<String, String> _fileNameTranslatedStringLmAndroid = {
+  'full_description.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbdescription250Sblocalmonero",
+  'title.txt': "app250Sbgoogle8722Sbplay8722Sbstore8722Sbtitle250Sblocalmonero",
+  'short_description.txt': "app_google_play_store_short_description_localmonero",
+};
+
