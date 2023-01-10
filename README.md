@@ -14,8 +14,8 @@ iOS
 
 Android
 
-```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata" --flavor "agoradesk" --os "android"```
-```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata" --flavor "localmonero" --os "android"```
+```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata/android" --flavor "agoradesk" --os "android"```
+```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata/android" --flavor "localmonero" --os "android"```
 
 
 ## Credits
