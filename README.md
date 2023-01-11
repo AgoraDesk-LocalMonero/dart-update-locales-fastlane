@@ -9,14 +9,23 @@ Command to run the script
 
 iOS
 
+AgoraDesk command
+
 ```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/ios/fastlane/metadata" --flavor "agoradesk" --os "ios"```
+
+LocalMonero command
+
 ```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/ios/fastlane/metadata" --flavor "localmonero" --os "ios"```
 
 Android
 
-```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata/android" --flavor "agoradesk" --os "android"```
-```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata/android" --flavor "localmonero" --os "android"```
+AgoraDesk command
 
+```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata/android" --flavor "agoradesk" --os "android"```
+
+LocalMonero command
+
+```dart bin/dart_update_locales_fastlane.dart --stringsDir "/Users/mavbook/projects/agoradesk-app-foss/assets/translations" --updatedDir "/Users/mavbook/projects/agoradesk-app-foss/android/fastlane/metadata/android" --flavor "localmonero" --os "android"```
 
 ## Credits
 

@@ -32,9 +32,17 @@ void update(ArgResults argResults) async {
     final List<Directory> fastlaneDirs = fastlaneFiles.whereType<Directory>().toList();
     final List<String> fastlaneDirsPaths = fastlaneDirs.map((e) => e.path).toList();
 
-    for (final dirName in _dirNameFileName.keys) {
+    late final Map<String, String> dirFilenames;
+
+    if (os == 'ios') {
+      dirFilenames = _dirNameFileNameIos;
+    } else {
+      dirFilenames = _dirNameFileNameAndroid;
+    }
+
+    for (final dirName in dirFilenames.keys) {
       final pathToTranslationFile =
-          translationsFiles.firstWhere((e) => e.path.split('/').last == _dirNameFileName[dirName]).path;
+          translationsFiles.firstWhere((e) => e.path.split('/').last == dirFilenames[dirName]).path;
 
       final Map<String, dynamic> translationsMap = await _readFileAsMap(pathToTranslationFile);
 
@@ -118,7 +126,7 @@ void _printErrors(ErrorType type) {
   }
 }
 
-final Map<String, String> _dirNameFileName = {
+final Map<String, String> _dirNameFileNameIos = {
   'default': 'app_en.arb',
   'ar-SA': 'app_ar.arb',
   'cs': 'app_cs.arb',
@@ -140,6 +148,29 @@ final Map<String, String> _dirNameFileName = {
   'tr': 'app_tr.arb',
   // 'zh-Hans': 'app_zh-cn.arb',
   'zh-Hant': 'app_zh-tw.arb',
+};
+
+final Map<String, String> _dirNameFileNameAndroid = {
+  'ar': 'app_ar.arb',
+  'cs-CZ': 'app_cs.arb',
+  'de-DE': 'app_de.arb',
+  'en-US': 'app_en.arb',
+  'es-ES': 'app_es.arb',
+  'fr-FR': 'app_fr.arb',
+  'hu-HU': 'app_hu.arb',
+  'it-IT': 'app_it.arb',
+  'ja-JP': 'app_ja.arb',
+  'ko-KR': 'app_ko.arb',
+  'nl-NL': 'app_nl.arb',
+  'pl-PL': 'app_pl.arb',
+  'pt-BR': 'app_pt-br.arb',
+  'ro': 'app_ro.arb',
+  'ru-RU': 'app_ru.arb',
+  // 'sk': 'app_sk.arb',
+  // 'sv': 'app_sv.arb',
+  'tr-TR': 'app_tr.arb',
+  // 'zh-Hans': 'app_zh-cn.arb',
+  'zh-TW': 'app_zh-tw.arb',
 };
 
 final Map<String, String> _fileNameTranslatedStringAdIos = {
