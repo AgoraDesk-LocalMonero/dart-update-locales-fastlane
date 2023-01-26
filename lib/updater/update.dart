@@ -126,6 +126,7 @@ void _printErrors(ErrorType type) {
   }
 }
 
+// available codes  https://docs.fastlane.tools/actions/deliver/
 final Map<String, String> _dirNameFileNameIos = {
   'default': 'app_en.arb',
   'ar-SA': 'app_ar.arb',
@@ -143,13 +144,14 @@ final Map<String, String> _dirNameFileNameIos = {
   'pt-BR': 'app_pt-br.arb',
   'ro': 'app_ro.arb',
   'ru': 'app_ru.arb',
-  // 'sk': 'app_sk.arb',
-  // 'sv': 'app_sv.arb',
+  'sk': 'app_sk.arb',
+  'sv': 'app_sv.arb',
   'tr': 'app_tr.arb',
-  // 'zh-Hans': 'app_zh-cn.arb',
+  'zh-Hans': 'app_zh-cn.arb',
   'zh-Hant': 'app_zh-tw.arb',
 };
 
+// can't find available codes, issue https://github.com/fastlane/fastlane/issues/21011
 final Map<String, String> _dirNameFileNameAndroid = {
   'ar': 'app_ar.arb',
   'cs-CZ': 'app_cs.arb',
@@ -166,10 +168,10 @@ final Map<String, String> _dirNameFileNameAndroid = {
   'pt-BR': 'app_pt-br.arb',
   'ro': 'app_ro.arb',
   'ru-RU': 'app_ru.arb',
-  // 'sk': 'app_sk.arb',
-  // 'sv': 'app_sv.arb',
+  'sk': 'app_sk.arb',
+  'sv': 'app_sv.arb',
   'tr-TR': 'app_tr.arb',
-  // 'zh-Hans': 'app_zh-cn.arb',
+  'zh_Hans': 'app_zh-cn.arb',
   'zh-TW': 'app_zh-tw.arb',
 };
 
